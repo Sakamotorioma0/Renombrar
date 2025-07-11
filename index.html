@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renombrar</title>
+    <link rel="stylesheet" href="rec/style.min.css">
+</head>
+
+<body>
+    <Section class="container">
+        <div style="padding: 2%;" class="row">
+            <div class="col-md-4">
+                <Label id="labelFecha">Fecha</Label>
+                <input id="date" type="date"></input>
+            </div>
+            <div class="col-md-4">
+                <label>Nombre Del Proyecto</label>
+                <input id="txtProyecto" type="text"></input>
+            </div>
+            <div class="col-md-4">
+                <label id="labelTipo">Tipo de Documento</label>
+                <select name="tipo" id="tipoDoc">
+                    <option value="0"></option>
+                    <option value="1">Plano</option>
+                    <option value="2">Costo</option>
+                    <option value="3">Reporte</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label id="labelSubProyecto">Sub Proyecto</label>
+                <input id="txtSubProyecto" type="text">
+            </div>
+            
+            <div class="col-md-4">
+                <label id="labelSubdoc">Sub Tipo Documento</label>
+                <select name="subDoc" id="subDoc">
+                    <option value="0"></option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label id="labelEspec">Especificaciones</label>
+                <input id="inputEspec" type="text">
+            </div>
+            <div class="col-md-4">
+                <label id="version">Version de documento</label>
+                <input id="inputVer" type="number" value="1">
+            </div>
+            <br>
+            
+        </div>
+        <label>Nombre del Documento</label>
+            <label class="bg-success" id="nombreDocumento"></label>
+            <br>
+            <br>
+        <button class="bt" id="generar">Generar Nombre</button>
+        <button id="Copi" >Copiar</button>
+
+    </Section>
+    <script src="rec/scritp.js"></script>
+</body>
+
+</html>
