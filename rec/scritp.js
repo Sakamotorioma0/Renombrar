@@ -1,5 +1,3 @@
-
-
 const inputFecha = document.getElementById("date");
 const btGenerar = document.getElementById("generar");
 const nombDoc = document.getElementById("nombreDocumento");
@@ -12,94 +10,10 @@ const selectSubTipDoc = document.getElementById("subDoc");
 const inputEsp = document.getElementById("inputEspec");
 const inputVer = document.getElementById("inputVer");
 
-const clickCopiar= document.getElementById("Copi");
+const clickCopiar = document.getElementById("Copi");
 
 
-/* Delcaro los select y las option  
 
-// inicio declarando las opciones de Planos
-const selectSubTipoPlanos = document.createElement("select");
-selectSubTipoPlanos.id = "SubDocPlanos";
-
-const opArg = document.createElement("option");
-const opEst = document.createElement("option");
-const opCon = document.createElement("option");
-const opIns = document.createElement("option");
-const opRen= document.createElement("option");
-
-opArg.value = "1";
-opArg.text = "Arquitectonico";
-opCon.value = "2";
-opCon.text = "Constructivo";
-opEst.value = "3";
-opEst.text = "Estructural";
-opIns.value = "4";
-opIns.text = "Instalacion";
-opRen.value= "5";
-opRen.text="Render";
-
-//Declaracion de select y  option de 
-
-const selectSubTipoCostos=document.createElement("Select");
-selectSubTipoCostos.id = "SubDocCostos";
-
-const opPresu=document.createElement("option");
-const opCataCon=document.createElement("option");
-const opGen=document.createElement("option");
-
-opPresu.value="1";
-opPresu.text="Presupuestos";
-opCataCon.value="2";
-opCataCon.text="Catalogo_de_Conceptos";
-opGen.value="3";
-opGen.text="Generador";
-
-/* termina declaracion */
-
-/*selecTipo.addEventListener("click", function (event) {
-     var indice = selecTipo.selectedIndex;
-
-    if (indice == "1") {
-        
-
-        if (document.getElementById("SubDocPlanos")) {
-            var indicePlan = selectSubTipoPlanos.selectedIndex;
-            opSubTipoDoc = selectSubTipoPlanos.options[indicePlan];
-
-        } else {
-            selectSubTipoPlanos.appendChild(opArg);
-            selectSubTipoPlanos.appendChild(opCon);
-            selectSubTipoPlanos.appendChild(opEst);
-            selectSubTipoPlanos.appendChild(opIns);
-            selectSubTipoPlanos.appendChild(opRen);
-
-            selecSubDoc.appendChild(selectSubTipoPlanos);
-            
-
-        };
-
-
-    };
-    if (indice == "2"){
-
-        
-        if(document.getElementById("SubDocCostos")){
-            var indiceCos = selectSubTipoCostos.selectedIndex;
-            opSubTipoDoc = selectSubTipoCostos.options[indiceCos];
-
-        }else{
-           
-            selectSubTipoCostos.appendChild(opPresu);
-            selectSubTipoCostos.appendChild(opCataCon);
-            selectSubTipoCostos.appendChild(opGen);
-
-            selecSubDoc.appendChild(selectSubTipoCostos);
-
-        };
-    };
-    
-
-});*/
 
 // creamos el div que contendra las opciones
 const opselecSubTipdoc = document.createElement("div");
@@ -110,6 +24,7 @@ const opEst = document.createElement("option");
 const opCon = document.createElement("option");
 const opIns = document.createElement("option");
 const opRen = document.createElement("option");
+const opAnt = document.createElement("option");
 
 opArg.value = "1";
 opArg.text = "Arquitectonico";
@@ -122,6 +37,8 @@ opIns.value = "4";
 opIns.text = "Instalacion";
 opRen.value = "5";
 opRen.text = "Render";
+opAnt.value = "6";
+opAnt.text = "Anteproyecto";
 
 // creamos las opciones de Costos
 const opPresu = document.createElement("option");
@@ -148,7 +65,7 @@ opRep.value = "2";
 opRep.text = "Reportes";
 
 
-selecTipo.addEventListener("change", function () {
+selecTipo.addEventListener("change", function() {
     var indice = selecTipo.value;
     switch (indice) {
         case "1":
@@ -165,6 +82,7 @@ selecTipo.addEventListener("change", function () {
                     opselecSubTipdoc.appendChild(opEst);
                     opselecSubTipdoc.appendChild(opIns);
                     opselecSubTipdoc.appendChild(opRen);
+                    opselecSubTipdoc.appendChild(opAnt);
 
                 };
 
@@ -177,6 +95,7 @@ selecTipo.addEventListener("change", function () {
                     opselecSubTipdoc.appendChild(opEst);
                     opselecSubTipdoc.appendChild(opIns);
                     opselecSubTipdoc.appendChild(opRen);
+                    opselecSubTipdoc.appendChild(opAnt);
 
                 };
 
@@ -186,6 +105,7 @@ selecTipo.addEventListener("change", function () {
                 opselecSubTipdoc.appendChild(opEst);
                 opselecSubTipdoc.appendChild(opIns);
                 opselecSubTipdoc.appendChild(opRen);
+                opselecSubTipdoc.appendChild(opAnt);
 
                 selectSubTipDoc.appendChild(opselecSubTipdoc);
 
@@ -201,6 +121,7 @@ selecTipo.addEventListener("change", function () {
                     opselecSubTipdoc.removeChild(opEst);
                     opselecSubTipdoc.removeChild(opIns);
                     opselecSubTipdoc.removeChild(opRen);
+                    opselecSubTipdoc.removeChild(opAnt);
 
                     opselecSubTipdoc.appendChild(opPresu);
                     opselecSubTipdoc.appendChild(opGen);
@@ -244,6 +165,7 @@ selecTipo.addEventListener("change", function () {
                     opselecSubTipdoc.removeChild(opEst);
                     opselecSubTipdoc.removeChild(opIns);
                     opselecSubTipdoc.removeChild(opRen);
+                    opselecSubTipdoc.removeChild(opAnt);
 
                     opselecSubTipdoc.appendChild(opRepFoto);
                     opselecSubTipdoc.appendChild(opRep);
@@ -273,7 +195,7 @@ selecTipo.addEventListener("change", function () {
     };
 });
 
-btGenerar.addEventListener('click', function () {
+btGenerar.addEventListener('click', function() {
     var indice = selecTipo.selectedIndex;
     var opcionSeleccionada = selecTipo.options[indice];
 
@@ -287,18 +209,38 @@ btGenerar.addEventListener('click', function () {
     const version = inputVer.value;
 
 
-    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + opcionSeleccionada.text + "_" + subproyecto.replace(/ /g, "_") +"_"+ opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
+    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + opcionSeleccionada.text + "_" + subproyecto.replace(/ /g, "_") + "_" + opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
 
 });
 
-clickCopiar.addEventListener("click", async()=>{
+clickCopiar.addEventListener("click", async() => {
 
     var txtCopi = nombDoc.innerText;
-    try{
+    try {
         await navigator.clipboard.writeText(txtCopi);
+        appendAlert('Texto copiado en portales exitosamente', 'success');
 
-    }catch (err){
+
+    } catch (err) {
+
+        appendAlert('No se a podido copiar el texto', 'success');
+
 
     };
 
 });
+
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button  type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('');
+
+
+
+    alertPlaceholder.append(wrapper);
+};
