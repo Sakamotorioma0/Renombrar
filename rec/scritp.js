@@ -62,7 +62,7 @@ opRepFoto.value = "1";
 opRepFoto.text = "Reporte_Fotografco";
 opRepFoto.id = "reportes";
 opRep.value = "2";
-opRep.text = "Reportes";
+opRep.text = "Actividades";
 
 
 selecTipo.addEventListener("change", function() {
