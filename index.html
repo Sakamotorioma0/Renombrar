@@ -9,15 +9,27 @@
 </head>
 
 <body>
+    <section class="container">
+        <div align="center">
+            <img src="rec/img/Logoimg.jpeg" alt="">
+        </div>
+    </section>
     <Section class="container">
         <div style="padding: 2%;" class="row">
             <div class="col-md-4">
                 <Label id="labelFecha">Fecha</Label>
                 <input id="date" type="date"></input>
             </div>
-            <div class="col-md-4">
+            <div id="divNombre" class="col-md-4">
                 <label>Nombre Del Proyecto</label>
-                <input id="txtProyecto" type="text"></input>
+                <select id="txtProyecto" >
+                    <option value="1">Teatsa Tultepec</option>
+                    <option value="2">Teatsa Ecatepec</option>
+                    <option value="3">La Corona</option>
+                    <option value="4">Kenworth</option>
+                    <option value="5">Plaza Jardines</option>
+                    <option value="6" id="optionEditNomb">Nombrar</option>
+                </select>
             </div>
             <div class="col-md-4">
                 <label id="labelTipo">Tipo de Documento</label>
@@ -28,9 +40,11 @@
                     <option value="3">Reporte</option>
                 </select>
             </div>
-            <div class="col-md-4">
-                <label id="labelSubProyecto">Sub Proyecto</label>
-                <input id="txtSubProyecto" type="text">
+            <div id="divSubProyecto" class="col-md-4 ">
+                <div class="form-check form-switch bg-info-subtle">
+                    <input class="form-check-input" type="checkbox" role="switch" id="checkSubProyecto">
+                    <label class="">Requiere Sub Proyecto?</label>
+                </div>
             </div>
 
             <div class="col-md-4">
@@ -39,6 +53,10 @@
                     <option value="0"></option>
                 </select>
             </div>
+
+            <div align="center" class="col-md-4" id="check">
+            </div>
+
             <div class="col-md-4">
                 <label id="labelEspec">Especificaciones</label>
                 <input id="inputEspec" type="text">
