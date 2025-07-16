@@ -264,8 +264,6 @@ selecTipo.addEventListener("change", function () {
                 selectSubTipDoc.appendChild(opselecSubTipdoc);
 
             };
-
-
             break;
         case "3":
             if (document.getElementById("opSubDoc")) {
@@ -344,7 +342,7 @@ btGenerar.addEventListener('click', function () {
             } else {
 
                 if (inputCheckfolio.checked) {
-                    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + inputContFolio.value + "_" + opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
+                    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + opcionSeleccionadasub.text + "_" +inputContFolio.value  + "_" + especi.replace(/ /g, "_") + "_v" + version;
                 } else {
                     nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + opcionSeleccionada.text + "_" + opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
                 };
@@ -377,7 +375,7 @@ btGenerar.addEventListener('click', function () {
             } else {
 
                 if (inputCheckfolio.checked) {
-                    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + inputContFolio.value + "_" + opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
+                    nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_"  + opcionSeleccionadasub.text + "_" + inputContFolio.value + "_" + especi.replace(/ /g, "_") + "_v" + version;
                 } else {
                     nombDoc.textContent = inputFecha.value + "-" + proyecto.replace(/ /g, "_") + "_" + opcionSeleccionada.text + "_" + opcionSeleccionadasub.text + "_" + especi.replace(/ /g, "_") + "_v" + version;
                 };
